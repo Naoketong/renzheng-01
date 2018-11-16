@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我是代码备用</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/测试-02.css">
+	<style type="text/css">
+
+		
+
+	</style>
+</head>
+<body>
+	<!-- <div class="aa-section">
+		<img class="aa-logo" src="img/14.png">
+		<h1 class="aa-title">登录</h1>
+		<p class="aa-text">欢迎回来，你可以使用密码或者手机短信验证码登录</p>
+		<div class="aa-content">
+			<input class="aa-input" type="text" placeholder="手机号码">
+			<input class="aa-input" type="text" placeholder="登录密码">
+			<div class="aa-verification">
+				请按住滑块，拖动到最右边
+				<div class="aa-verification-item">>></div>
+				<span class="aa-verification-items">请滑动验证</span>
+			</div>
+			<div class="aa-checkbox">
+				<input class="aa-checkbox-input" type="checkbox">
+				<p class="aa-checkbox-text">记住账号<a href="javascript:;">忘记密码?</a></p>
+			</div>
+			<a href="javascript:;" class="aa-button">登录</a>
+			<a class="aa-phone" href="javascript:;">手机验证码登录>></a>
+		</div>
+	</div>
+	<p class="aa-button-text">还没有Toorp账号？<a class="showMask" href="javascript:;">立即注册</a></p>
+ -->
+
+<div class="registration-page_container" style="">
+  <div class="banner-container">
+  	<div class="register-section" style="">
+      <div class="register-close-button"><i></i></div>  
+      <div class="register-head"> 
+        <div class="register-align_left">
+          <p class="head-title">成为认证学员</p>
+          <p class="head-text">成为极客学院认证学员，点亮专属身份标识，免费观看 全站 80% 以上会员课程。</p>
+        </div>
+        <div class="register-align_right"><p class="head-procedure"><span id="procedure">第1步</span><i>/</i>共3步</p></div>
+      </div>      
+        <div class="register-content_one" style="">
+          <div class="portrait-section">
+            <a href="javascript:;"><img class="portrait-img" src="img/12.png"></a>
+            <p class="user-name">小不能够好吧</p>
+          </div>
+          <div class="portrait-fill">
+            <div class="fill-align_top">
+              <div class="fill-select">
+                <span>性别：</span>                        
+                <div class="selectFrame gender">
+                   <button></button>
+                   <ul>
+                     <li value="男">男</li>
+                     <li value="女">女</li>
+                     <li value="保密">保密</li>
+                   </ul>
+                </div>            
+              </div>
+              <div class="fill-select">
+                <span>居住地：</span>           
+                <div id="sheng" class="selectFrame sheng">
+                  <button></button>
+                  <ul></ul>
+                </div>                      
+                <div id="shi" class="selectFrame shi">
+                  <button></button>
+                  <ul></ul>
+                </div>            
+              </div>
+            </div>
+
+            <div class="fill-align_middle">
+              <p class="state-item-title">您的当前状态 :</p>                            
+              <div class="state-item" id="xueSheng">学生</div>                            
+              <div class="state-item" id="zaiZhi">在职</div>
+              <div class="state-item" id="daiYe">待业</div>
+            </div>      
+
+            <!-- <div class="fill-align_middle-desc" style=";">
+              <div class="fill-detail-list"  style="" id="fxk-1">
+                <div class="fill-detail-item nianji">
+                  <button value="">你所在的年级</button>
+                  <ul>
+                    <li value="高中以下">高中以下</li>
+                    <li value="专科">专科</li>
+                    <li value="大学本科">大学本科</li>
+                    <li value="研究生及以上">研究生及以上</li>
+                   </ul>
+                </div>
+                <div class="fill-detail-item ruxue">
+                  <button value="">入学年份</button>
+                  <ul></ul>
+                </div>  
+              </div>
+              <div class="fill-detail-list"  style=";" id="fxk-2">
+                <div class="fill-detail-item zhiye">
+                  <button value="">您所从事的职业</button>
+                  <ul>
+                    <li value="技术">技术</li>
+                    <li value="产品">产品</li>
+                    <li value="设计">设计</li>
+                    <li value="测试">测试</li>
+                    <li value="运营">运营</li>
+                    <li value="其他">其他</li>
+                  </ul>
+                </div>
+                <div class="fill-detail-item nianfen">
+                  <button value="">年份</button>
+                  <ul>
+                    <li value="1年以下">1年以下</li>
+                    <li value="1-2年">1-2年</li>
+                    <li value="3-5年">3-5年</li>
+                    <li value="6-10年">6-10年</li>
+                    <li value="10年以上">10年以上</li>
+                  </ul>
+
+                </div>
+              </div>              
+            </div> -->    
+            <div class="fill-align_middle-desc" style=";">             
+              <div class="selectFrame fill-detail-item" id="nianji" style="display:${career_status == 1 ? 'block' : 'none'}" >
+                  <button value="">${career_status == 1 && career_type ? career_type : '你所在年级'}</button>
+                  <ul>
+                    <li value="高中以下">高中以下</li>
+                    <li value="专科">专科</li>
+                    <li value="大学本科">大学本科</li>
+                    <li value="研究生及以上">研究生及以上</li>
+                   </ul>  11111
+              </div>
+              <div class="selectFrame fill-detail-item" id="ruxue" style="display:${career_status == 1 ? 'block' : 'none'}">
+                  <button value="">${school_year_enter || '入学年份'}</button>
+                  <ul>
+                    <li value="2018年">2018年</li>
+                  </ul>   22222
+              </div>  
+              <div class="selectFrame fill-detail-item" id="zhiye" style="display:${career_status == 2 ? 'block' : 'none'}">
+                  <button value="">${career_status == 2 && career_type ? career_type : '你所从事的职业'}</button>
+                  <ul>
+                    <li value="技术">技术</li>
+                    <li value="产品">产品</li>
+                    <li value="设计">设计</li>
+                    <li value="测试">测试</li>
+                    <li value="运营">运营</li>
+                    <li value="其他">其他</li>
+                  </ul>   33333
+              </div>
+              <div class="selectFrame fill-detail-item" id="nianfen" style="display:${career_status == 2 ? 'block' : 'none'}">
+                  <button value="">${career_status == 2 && career_type ? career_type : '</button>你所从事的年份'}
+                  <ul>
+                    <li value="1年以下">1年以下</li>
+                    <li value="1-2年">1-2年</li>
+                    <li value="3-5年">3-5年</li>
+                    <li value="6-10年">6-10年</li>
+                    <li value="10年以上">10年以上</li>   44444     
+              </div>                
+            </div>    
+          </div>
+
+            <div class="fill-align_buttom">
+              <a class="next-step_button" href="javascript:;">下一步</a>
+            </div>   
+          </div>
+
+               
+        </div>
+
+        <div class="register-content_two" style="display: none;">
+          <p class="register-select-hint">选择你感兴趣的职业方向（最多可选择 3 项）
+            <span>系统将根据您的选择为您推荐合适的课程</span>
+          </p>
+          <ul class="select-list">
+            <li class="select-item">Web 前端工程师<i></i></li>
+            <li class="select-item">Android 开发工程师<i></i></li>
+            <li class="select-item">iOS 开发工程师<i></i></li>
+            <li class="select-item">GO 语言工程师<i></i></li>
+            <li class="select-item">Python Web工程师<i></i></li>
+            <li class="select-item">PHP 工程师<i></i></li>
+            <li class="select-item">Java Web工程师<i></i></li>
+          </ul>
+          <div class="select-align_buttom">
+            <a class="select-step_button" href="javascript:;">上一步</a>
+            <a class="select-step_button" href="javascript:;">下一步</a>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="register-content_three" style="display: none;">
+          <p class="self-assessment-hint">您在这些方向上当前的水平如何？
+            <span>系统将根据您的选择为您推荐合适的课程</span>
+          </p>
+          <div class="self-assessment-list">                  
+            <ul class="self-assessment-item">
+              <li class="self-items-name">PHP 前端工程师<i></i></li>
+              <li class="self-assessment-items">完全不了解<i></i></li>
+              <li class="self-assessment-items">有点了解<i></i></li>
+              <li class="self-assessment-items">熟悉<i></i></li>
+              <li class="self-assessment-items">精通<i></i></li>
+            </ul>      
+          </div>
+          <div class="self-assessment-button">
+            <a class="self-assessment-bth" href="javascript:;">上一步</a>
+            <a class="self-assessment-bth" href="javascript:;">申请认证</a>
+          </div>
+        </div>
+
+        <!-- <div class="register-content_three" style="display: none;">
+          <p class="self-assessment-hint">您在这些方向上当前的水平如何？
+            <span>系统将根据您的选择为您推荐合适的课程</span>
+          </p>
+          <div class="self-assessment-list">
+           
+            <ul class="self-assessment-item">
+              <li class="self-items-name">iOS 前端工程师<i></i></li>
+              <li class="self-assessment-items">完全不了解<i></i></li>
+              <li class="self-assessment-items">有点了解<i></i></li>
+              <li class="self-assessment-items">熟悉<i></i></li>
+              <li class="self-assessment-items">精通<i></i></li>
+            </ul>
+            <ul class="self-assessment-item">
+              <li class="self-items-name">PHP 前端工程师<i></i></li>
+              <li class="self-assessment-items">完全不了解<i></i></li>
+              <li class="self-assessment-items">有点了解<i></i></li>
+              <li class="self-assessment-items">熟悉<i></i></li>
+              <li class="self-assessment-items">精通<i></i></li>
+            </ul>      
+          </div>
+          <div class="self-assessment-button">
+            <a class="self-assessment-bth" href="javascript:;">上一步</a>
+            <a class="self-assessment-bth" href="javascript:;">申请认证</a>
+          </div>
+        </div> -->
+    </div>
+    <div class="binding-section" style="display: none;">
+      <div class="register-close-button"><i></i></div>  
+      <div class="binding-align-top">
+        <h3 class="binding-title">绑定手机 完成认证</h3>
+        <p class="binding-text">请您绑定手机防止账号丢失和被盗，手机号可用于登录和找回密码。</p>
+      </div>
+      <div class="binding-content">
+        <div class="binding-input">
+          <input class="binding-phone" type="text" placeholder="请输入手机号码">
+        </div>
+        <div class="binding-input">
+          <input class="input-verification" type="text" placeholder="验证码">
+          <div class="binding-verification"></div><!-- 验证图 -->
+        </div>
+        <div class="binding-input">
+          <input class="binding-phone" type="text" placeholder="动态码">
+          <div class="binding-Dynamiccode">获取动态码</div><!-- 获取动态码获取动态码获取动态码 -->
+        </div>
+        <div class="binding-button">绑定手机</div>
+      </div>
+    </div>
+
+    <div class="accomplish-section" style="display: none;">
+      <div class="register-close-button"><i></i></div>  
+      <div class="accomplish-align-top">
+        <div class="accomplish-head"><img src="img/13.png"></div>
+        <p class="accomplish-head-name">小不能够好吧</p>
+        <p class="accomplish-title">恭喜，完成认证！</p>
+        <p class="accomplish-subheading">现在你可以免费观看 80% 以上会员课程</p>
+        <a class="accomplish-bth" href="javascript:;">马上去学习 >></a>
+      </div>
+      <div class="accomplish-content">
+        <h4 class="accomplish-recommend">为您推荐如下课程</h4>
+        <div class="accomplish-list">
+          <p class="accomplish-list-title">职业学院</p>
+          <div class="accomplish-item">
+            <a href="javascript:;"><img src="img/14.png"></a>
+            <p>ython Web 工程师成长计划<br><span>2314 人正在学习</span></p>
+          </div>
+          <div class="accomplish-item">
+            <a href="javascript:;"><img src="img/15.png"></a>
+            <p>GO 工程师成长计划<br><span>2314 人正在学习</span></p>
+          </div>
+        </div>
+        <ul class="accomplish-course">
+          <li class="accomplish-course-title">会员课程</li>
+          <li class="accomplish-course-item"><a href="javascript:;">·Tornado 开发--TCP 编程</a></li>
+          <li class="accomplish-course-item"><a href="javascript:;">·开发远程控制程序高级功能</a></li>
+          <li class="accomplish-course-item"><a href="javascript:;">·网页控制电脑</a></li>
+          <li class="accomplish-course-item"><a href="javascript:;">·Python 类深入</a></li>
+          <li class="accomplish-course-item"><a href="javascript:;">·Python 类初步</a></li>
+          <li class="accomplish-course-item"><a href="javascript:;">·Python 初级项目：远程操控电脑</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
+ 
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/renzheng-01.js"></script>
+</body>
+</html>

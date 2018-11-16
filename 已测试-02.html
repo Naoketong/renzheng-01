@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1号测试</title>
+	<style type="text/css">
+
+	.fill-gender{
+  display: inline-block;
+  height: 30px;
+  margin-right: 46px;
+  	margin:350px;
+  	position: relative;
+}
+select{
+	position: absolute;
+	left: 40px;
+	top: 0px;
+  display: block;   
+  width: 70px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 2px;
+  outline: none;
+  font-size: 12px;
+  color: #333;
+  line-height: 30px;
+  padding-left: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+
+}
+.fill-gender-item:before{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 84px;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  background-image: url(img/pull-down.png);
+}
+.gender-desc{
+	background-color: red;
+	</style>
+}
+
+</head>
+<body>
+	<div class="fill-gender">
+	  <span>性别：</span>                         
+	  <div id="gender" class="fill-gender-item"></div>    <!-- class="fill-gender-item"   -->       
+	</div>
+	
+  
+	<script type="text/javascript">
+		function gender() {
+      }
+      gender({
+          ID: '#gender',
+          data: ['男', '女','中性'],          
+      });      
+		function gender(e) {
+		    let layout;
+		    for (let i = 0; i< e.data.length; i++) {
+		        layout += `<option class="gender-desc">  ${e.data[i]}  </option>`;
+		    }
+		    let arr = document.createElement("select");
+		    arr.innerHTML = layout;    
+		    document.querySelector(e.ID).appendChild(arr);
+		}
+
+
+	</script>
+</body>
+</html>
