@@ -2,7 +2,7 @@ const tmp = {
 	data:{
 		gender:'保密',
     sex: '男',
-    nianji:'你所在的年级',
+    // nianji:'你所在的年级',
     provice:'省',
     city:'市',
     career_status:0,    //职业状态,1-学生、2-在职、3-待业
@@ -69,27 +69,19 @@ const tmp = {
 
     $('body').on('click','.state-item',this.getStatusValue);//下面三个选择项
      // $('body').on('click','.selectFrame',this.cityLiHtml); //市 内容 最后搞
-
     $('body').on('click','#sheng ul li',this.sheng_Li);//省 点击
-
-
     $('body').on('click','.xiayibu_a.active',this.xiayibu_a);//第一页下一步
     $('body').on('click','.shangyibu_b',this.shangyibu_b);//第二页上一步
     $('body').on('click','.xiayibu_b',this.xiayibu_b);//第二页下一步
     $('body').on('click','.shangyibu_c',this.shangyibu_c);//第三页上一步
-
     $('body').on('click','.select-list li',this.selectList_Li);//职业方向 点击
-
-
     $('body').on('click','.self-assessment-items',this.assessment_Li);
-
     $('body').on('click','.sqrz_c',this.sqrz_c);//申请绑定
     $('body').on('click','.binding-button',this.bindingButton);//绑定手机.
-
     $('body').on('click','.binding-Dynamiccode',this.getMobileCode);
     $('body').on('click','.activeButton',this.activeButton);
     $('body').on('click','.binding-phone',this.bindingPhone);
-    $('body').on('click','.accomplish-bth',this.accomplishBth);//最后  马上去学习         
+    $('body').on('click','.accomplish-bth',this.accomplishBth);//最后 马上去学习         
 	},
   showMask:function(){//点击注册
     let html = tmp.createMaskHTML();
@@ -103,19 +95,11 @@ const tmp = {
     $('.registration-page_container').remove();
   },
   
-
- 
-
-
- 
-
-
   createMaskHTML:function(){//点击注册插入html 第一步
   	let gender = tmp.data.gdender;
     let career_status = tmp.data.career_status;
     let school_year_enter = tmp.data.school_year_enter;
     let work_experience = tmp.data.work_experience;
-
     let provinceLiHtml = tmp.prohtml();
     let cityLiHtml = tmp.cityLiHtml();//市 内容 最后搞
     let provice_id = tmp.data.provice_id;
@@ -238,20 +222,15 @@ const tmp = {
   shengValue:function(){//省 收起
     $(`#sheng button`).html($(this).text()).addClass('color666')
     $(`#sheng ul`).hide();
-
-
-   
   },
   shi:function(){//市 下拉
     let ele = `#shi ul`
     $(ele).show();
-
   },
   shiValue:function(){//市 收起
     $(`#shi button`).html($(this).text()).addClass('color333')
     $(`#shi ul`).hide();
   },
-  
   prohtml:function(){//省 内容 最后搞
     let provinceLiHtml = "";
     data_area.child.forEach(function(data){
@@ -263,7 +242,6 @@ const tmp = {
 
     return provinceLiHtml;
     // console.log(value);
-
   },
   sheng_Li:function(){//省 点击
     let ID = this.getAttribute('id');
@@ -273,7 +251,6 @@ const tmp = {
   },
   sheng_shi:function(){
     $('.selectFrame.shi ul').remove();
-
     let val = tmp.data.ID;//有效  
     console.log(val);
     let arr = data_area.child;  
@@ -285,7 +262,6 @@ const tmp = {
       }   
     })
     console.log(sheng_shi);
-
     let cityLiHtml = "";
     sheng_shi.child.forEach(function(data){
       let text = data.name;
@@ -300,7 +276,6 @@ const tmp = {
     $('.selectFrame.shi').append(htmlBB);
 
   },
- 
   cityLiHtml:function(){//市 内容 
     let val = tmp.data.ID;//有效  
     console.log(val)
@@ -316,7 +291,6 @@ const tmp = {
     })
     return cityLiHtml;      
   },
-
   gender:function(event){//选择性别
     let ele = `.selectFrame.gender ul`
     $(ele).show();
@@ -357,12 +331,6 @@ const tmp = {
     $(`#nianfen button`).html($(this).text()).addClass('color333')
     $(`#nianfen ul`).hide();
   },
-
-
-  
-  
-
-  
   getStatusValue:function(){  
     let val = this.getAttribute('value');   
     tmp.data.career_status = val;
@@ -405,15 +373,12 @@ const tmp = {
     }
     tmp.showBtnOne();
   },
-
   showBtnOne:function(){
-
     let val = tmp.data.career_status;
     // console.log(val);
     if(val){
     $('.next-step_button').addClass('active');
     }
-
     // let val = tmp.data.career_status;
     // // console.log(val);
     // if(val == '3'){
@@ -637,7 +602,6 @@ const tmp = {
   },
 
   getMobileCode:function(){
-
     let tel = $.trim($(".binding-phone").val());
     let img = $.trim($('.input-verification').val());
     if(tel == ''){
@@ -659,13 +623,12 @@ const tmp = {
     return /^((\(\d{2,3}\))|(\d{3}\-))?(1[34578]\d{9})$/.test(tel);
   },
   countDown:function(){
-    $('.binding-Dynamiccode').html(59+'秒后重试')
+    $('.binding-Dynamiccode').html(59 + '秒后重试')
     let t = 59;
     let countDown = setInterval(function(){
       t --;
-      $('.binding-Dynamiccode').html(t+'秒后重试')
-
-      if(t ==0){
+      $('.binding-Dynamiccode').html(t + '秒后重试')
+      if(t == 0){
           clearInterval(countDown)
           $('.binding-Dynamiccode').html('获取动态码')
           $('.body').on('click','.binding-Dynamiccode',tmp.getMobileCode)
@@ -735,6 +698,5 @@ const tmp = {
   accomplishBth:function(){//最后  马上去学习
      $('.registration-page_container').remove();
   },
- 
 }
 	tmp.init();
