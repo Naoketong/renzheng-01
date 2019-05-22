@@ -704,7 +704,6 @@ const tmp = {
     }
   
   },
-
   bindingButton:function(){//绑定手机
     $('.binding-section').remove();
     htmlCrr = `
@@ -744,12 +743,9 @@ const tmp = {
     `
     $('.banner-container').append(htmlCrr);
   },
-
-
   accomplishBth:function(){//最后  马上去学习
      $('.registration-page_container').remove();
   },
  
 }
 	tmp.init();
-
